@@ -1,0 +1,47 @@
+{
+  "name": "my-lit-components",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/index.cjs.js", 
+  "module": "dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./star-rating": {
+      "import": "./dist/star-rating.es.js",
+      "require": "./dist/star-rating.cjs.js"
+    },
+    "./weather-component": {
+      "import": "./dist/weather-component.es.js",
+      "require": "./dist/weather-component.cjs.js"
+    },
+    "./progress-ring": {
+      "import": "./dist/progress-ring.es.js",
+      "require": "./dist/progress-ring.cjs.js"
+    },
+    "./tag-label": {
+      "import": "./dist/tag-label.es.js",
+      "require": "./dist/tag-label.cjs.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lit": "^3.2.1",
+    "my-lit-components": "file:./src/components"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.1"
+  },
+  "keywords": ["lit", "web-components", "reusable", "ui", "components"],
+  "author": "Roja Gnanavel",
+  "license": "MIT"
+}
