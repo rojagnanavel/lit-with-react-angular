@@ -7,8 +7,19 @@
     <title>Vite + Lit + TS</title>
     <link rel="stylesheet" href="./src/index.css" />
     <script type="module" src="/src/components/lit-button.ts"></script>
+    <script type="module" src="/src/components/multi-prop-component.ts"></script>
   </head>
   <body>
-    <lit-button></lit-button>
+    <div>
+      <lit-button></lit-button>
+      <multi-prop-component
+      title="${Dynamic Title}"
+      count="${5}"
+      .isEnabled="${true}"
+      .onClick="${(e) => console.log('Button clicked!', e)}"
+      .user="${{ name: 'Alice', age: 30 }}"
+      .items="${['Task 1', 'Task 2', 'Task 3']}"
+    ></multi-prop-component>
+    </div>
   </body>
 </html>

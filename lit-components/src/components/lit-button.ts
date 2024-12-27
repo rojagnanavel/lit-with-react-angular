@@ -3,9 +3,12 @@ import { property, customElement } from 'lit/decorators.js';
 
 @customElement('lit-button')
 export default class LitButton extends LitElement {
+
+   // Declare reactive properties
   @property({ type: String }) label: string = 'Click Me';
   @property({ type: Boolean }) disabled: boolean = false;
 
+ // Define scoped styles right with your component, in plain CSS
   static styles = css`
     :host {
       display: inline-block;
@@ -19,6 +22,7 @@ export default class LitButton extends LitElement {
       color: var(--button-color, #fff);
       cursor: pointer;
       transition: background 0.3s;
+      margin-bottom: 20px;
     }
     button:hover {
       background: var(--button-hover-bg, #0056b3);
@@ -28,6 +32,8 @@ export default class LitButton extends LitElement {
       cursor: not-allowed;
     }
   `;
+
+   // Render the UI as a function of component state
   render() {
     return html`
       <button ?disabled=${this.disabled}>
